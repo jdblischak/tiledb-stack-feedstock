@@ -9,9 +9,9 @@ source:
   - url: https://github.com/TileDB-Inc/TileDB/releases/download/2.19.0/tiledb-linux-x86_64-noavx2-2.19.0-fa30a88a.tar.gz
     folder: TileDB/
     sha256: 215f48927e4b78377f44326eb543613df07efe47e8213d7c9ea036a3208ad0bd
-  - url: https://github.com/TileDB-Inc/TileDB-Py/archive/0.25.0.tar.gz
+  - url: https://github.com/TileDB-Inc/TileDB-Py/archive/refs/tags/0.25.0.tar.gz
     folder: TileDB-Py/
-    sha256: 70c2cac67cd5c4329df466a6127c1b1698cb80f54535fd33e0d0eb5723dc611e
+    sha256: 89c5b953ff63c1b426dce32fb30378849212dfd19ab2637a32ee696ad1fd2ab8
 
 outputs:
   - name: tiledb
