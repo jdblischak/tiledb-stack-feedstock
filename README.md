@@ -39,24 +39,20 @@ support for fast updates and reads. It features excellent compression, and an ef
 parallel I/O system with high scalability.
 
 
-About tiledb-py
----------------
+About r-tiledb
+--------------
 
-Home: http://tiledb.io
+Home: https://www.tiledb.com
 
 Package license: MIT
 
-Summary: Python interface to the TileDB sparse and dense multi-dimensional array storage manager
+Summary: R interface to the TileDB array storage manager
 
-Development: https://github.com/TileDB-Inc/TileDB-Py
+Development: https://github.com/TileDB-Inc/TileDB-R
 
-Documentation: https://api-reference.tiledb.io/python-api.html
+Documentation: https://docs.tiledb.com/developer/
 
-TileDB-Py is the python interface to the TileDB array storage manager.
-TileDB  is an efficient multi-dimensional array management system which introduces
-a novel on-disk format that can store dense and sparse array data with
-support for fast reads and updates and reads. It features excellent compression, and an efficient
-parallel I/O system with high scalability.
+TileDB is a highly-parallelized, cloud native array storage engine.
 
 
 Current build status
@@ -96,8 +92,8 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--tiledb-green.svg)](https://anaconda.org/tiledb/r-tiledb) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/r-tiledb.svg)](https://anaconda.org/tiledb/r-tiledb) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/r-tiledb.svg)](https://anaconda.org/tiledb/r-tiledb) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/r-tiledb.svg)](https://anaconda.org/tiledb/r-tiledb) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-tiledb-green.svg)](https://anaconda.org/tiledb/tiledb) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/tiledb.svg)](https://anaconda.org/tiledb/tiledb) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/tiledb.svg)](https://anaconda.org/tiledb/tiledb) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/tiledb.svg)](https://anaconda.org/tiledb/tiledb) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-tiledb--py-green.svg)](https://anaconda.org/tiledb/tiledb-py) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/tiledb-py.svg)](https://anaconda.org/tiledb/tiledb-py) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/tiledb-py.svg)](https://anaconda.org/tiledb/tiledb-py) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/tiledb-py.svg)](https://anaconda.org/tiledb/tiledb-py) |
 
 Installing tiledb-stack
 =======================
@@ -109,41 +105,41 @@ conda config --add channels tiledb/label/for-cloud
 conda config --set channel_priority strict
 ```
 
-Once the `tiledb/label/for-cloud` channel has been enabled, `tiledb, tiledb-py` can be installed with `conda`:
+Once the `tiledb/label/for-cloud` channel has been enabled, `r-tiledb, tiledb` can be installed with `conda`:
 
 ```
-conda install tiledb tiledb-py
-```
-
-or with `mamba`:
-
-```
-mamba install tiledb tiledb-py
-```
-
-It is possible to list all of the versions of `tiledb` available on your platform with `conda`:
-
-```
-conda search tiledb --channel tiledb/label/for-cloud
+conda install r-tiledb tiledb
 ```
 
 or with `mamba`:
 
 ```
-mamba search tiledb --channel tiledb/label/for-cloud
+mamba install r-tiledb tiledb
+```
+
+It is possible to list all of the versions of `r-tiledb` available on your platform with `conda`:
+
+```
+conda search r-tiledb --channel tiledb/label/for-cloud
+```
+
+or with `mamba`:
+
+```
+mamba search r-tiledb --channel tiledb/label/for-cloud
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search tiledb --channel tiledb/label/for-cloud
+mamba repoquery search r-tiledb --channel tiledb/label/for-cloud
 
-# List packages depending on `tiledb`:
-mamba repoquery whoneeds tiledb --channel tiledb/label/for-cloud
+# List packages depending on `r-tiledb`:
+mamba repoquery whoneeds r-tiledb --channel tiledb/label/for-cloud
 
-# List dependencies of `tiledb`:
-mamba repoquery depends tiledb --channel tiledb/label/for-cloud
+# List dependencies of `r-tiledb`:
+mamba repoquery depends r-tiledb --channel tiledb/label/for-cloud
 ```
 
 

@@ -12,6 +12,9 @@ source:
   - url: https://github.com/TileDB-Inc/TileDB-Py/archive/refs/tags/0.25.0.tar.gz
     folder: TileDB-Py/
     sha256: 89c5b953ff63c1b426dce32fb30378849212dfd19ab2637a32ee696ad1fd2ab8
+  - url: https://github.com/TileDB-Inc/TileDB-R/archive/0.23.0.tar.gz
+    folder: TileDB-R/
+    sha256: 28ff34932b29a37650794af67aa6d336c1e3440c50cbc64940ff9f01098289df
 
 outputs:
   - name: tiledb
@@ -44,57 +47,101 @@ outputs:
         parallel I/O system with high scalability.
       doc_url: http://docs.tiledb.io
       dev_url: https://github.com/TileDB-Inc/TileDB
-  - name: tiledb-py
-    version: 0.25.0
-    script: build-tiledb-py.sh
+  # - name: tiledb-py
+  #   version: 0.25.0
+  #   script: build-tiledb-py.sh
+  #   build:
+  #     number: 0
+  #   requirements:
+  #     build:
+  #       - {{ compiler('cxx') }}
+  #     host:
+  #       - pip
+  #       - wheel
+  #       - setuptools
+  #       - setuptools_scm
+  #       - python
+  #       - cython <3.0
+  #       - numpy
+  #       - pybind11 <2.11
+  #       - {{ pin_subpackage('tiledb', exact=True) }}
+  #     run:
+  #       - python
+  #       - {{ pin_compatible('numpy') }}
+  #       - packaging
+  #   test:
+  #     requires:
+  #       - hypothesis
+  #       - pyarrow
+  #       - pytest
+  #       - pandas
+  #       - psutil
+  #     imports:
+  #       - tiledb
+  #     source_files:
+  #       - TileDB-Py/tiledb/tests/
+  #     commands:
+  #       - python -c "import tiledb; tiledb.libtiledb.version()"
+  #       - python -c "import tiledb; assert tiledb.VFS().supports('s3')"
+  #       - cd TileDB-Py && pytest -v --ignore-glob='*_examples.py' --ignore-glob='*_dask.py'
+  #   about:
+  #     home: http://tiledb.io
+  #     license: MIT
+  #     license_family: MIT
+  #     license_file: LICENSE
+  #     summary: Python interface to the TileDB sparse and dense multi-dimensional array storage manager
+  #     description: |
+  #       TileDB-Py is the python interface to the TileDB array storage manager.
+  #       TileDB  is an efficient multi-dimensional array management system which introduces
+  #       a novel on-disk format that can store dense and sparse array data with
+  #       support for fast reads and updates and reads. It features excellent compression, and an efficient
+  #       parallel I/O system with high scalability.
+  #     doc_url: https://api-reference.tiledb.io/python-api.html
+  #     dev_url: https://github.com/TileDB-Inc/TileDB-Py
+  - name: r-tiledb
+    version: 0.23.0
+    script: build-tiledb-r.sh
     build:
       number: 0
+      rpaths:
+        - lib/R/lib/
+        - lib/
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - pkg-config
+        - make
       host:
-        - pip
-        - wheel
-        - setuptools
-        - setuptools_scm
-        - python
-        - cython <3.0
-        - numpy
-        - pybind11 <2.11
+        - r-base
         - {{ pin_subpackage('tiledb', exact=True) }}
+        - r-rcpp >=1.0.8
+        - r-rcppspdlog
+        - r-nanotime
+        - r-spdl
+        - r-rcppint64
       run:
-        - python
-        - {{ pin_compatible('numpy') }}
-        - packaging
+        - r-base
+        - r-nanotime
+        - r-spdl
     test:
       requires:
-        - hypothesis
-        - pyarrow
-        - pytest
-        - pandas
-        - psutil
-      imports:
-        - tiledb
-      source_files:
-        - TileDB-Py/tiledb/tests/
+        - r-tinytest
+        - r-nycflights13
+        - r-palmerpenguins
+        - r-data.table
       commands:
-        - python -c "import tiledb; tiledb.libtiledb.version()"
-        - python -c "import tiledb; assert tiledb.VFS().supports('s3')"
-        - cd TileDB-Py && pytest -v --ignore-glob='*_examples.py' --ignore-glob='*_dask.py'
+        - Rscript -e 'tinytest::test_package("tiledb")'
     about:
-      home: http://tiledb.io
+      home: https://www.tiledb.com
       license: MIT
-      license_family: MIT
-      license_file: LICENSE
-      summary: Python interface to the TileDB sparse and dense multi-dimensional array storage manager
+      license_file:
+        - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
+        - LICENSE
+      summary: R interface to the TileDB array storage manager
       description: |
-        TileDB-Py is the python interface to the TileDB array storage manager.
-        TileDB  is an efficient multi-dimensional array management system which introduces
-        a novel on-disk format that can store dense and sparse array data with
-        support for fast reads and updates and reads. It features excellent compression, and an efficient
-        parallel I/O system with high scalability.
-      doc_url: https://api-reference.tiledb.io/python-api.html
-      dev_url: https://github.com/TileDB-Inc/TileDB-Py
+        TileDB is a highly-parallelized, cloud native array storage engine.
+      doc_url: https://docs.tiledb.com/developer/
+      dev_url: https://github.com/TileDB-Inc/TileDB-R
 
 about:
   home: http://tiledb.io
