@@ -1,0 +1,49 @@
+{% set name = "tiledb-stack" %}
+{% set version = "2.19.0" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  - url: https://github.com/TileDB-Inc/TileDB/releases/download/2.19.0/tiledb-linux-x86_64-noavx2-2.19.0-fa30a88a.tar.gz
+    folder: TileDB/
+    sha256: 215f48927e4b78377f44326eb543613df07efe47e8213d7c9ea036a3208ad0bd
+
+outputs:
+  - name: tiledb
+    version: {{ version }}
+    script: build-tiledb.sh
+    build:
+      number: 0
+      run_exports:
+        # https://abi-laboratory.pro/?view=timeline&l=tiledb
+        - {{ pin_subpackage('tiledb', min_pin='x.x', max_pin='x.x') }}
+    test:
+      requires:
+        - {{ compiler('cxx') }}
+        - cmake
+        - make
+      commands:
+        - test -e $PREFIX/include/tiledb/tiledb.h
+        - test -e $PREFIX/include/tiledb/tiledb
+        - test -e $PREFIX/lib/libtiledb$SHLIB_EXT
+    about:
+      home: http://tiledb.io
+      license: MIT
+      license_family: MIT
+      license_file: LICENSE
+      summary: TileDB sparse and dense multi-dimensional array data management
+      description: |
+        TileDB is an efficient multi-dimensional array management system which introduces
+        a novel on-disk format that can effectively store dense and sparse array data with
+        support for fast updates and reads. It features excellent compression, and an efficient
+        parallel I/O system with high scalability.
+      doc_url: http://docs.tiledb.io
+      dev_url: https://github.com/TileDB-Inc/TileDB
+
+extra:
+  recipe-maintainers:
+    - ihnorton
+    - jdblischak
+    - shelnutt2
