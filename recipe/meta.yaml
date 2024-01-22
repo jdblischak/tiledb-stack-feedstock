@@ -42,6 +42,16 @@ outputs:
       doc_url: http://docs.tiledb.io
       dev_url: https://github.com/TileDB-Inc/TileDB
 
+about:
+  home: http://tiledb.io
+  license: MIT
+  license_family: MIT
+  summary: TileDB stack to deploy to TileDB Cloud
+  description: |
+    Special set of linux binaries for easy deployment
+  doc_url: http://docs.tiledb.io
+  dev_url: https://github.com/TileDB-Inc/TileDB
+
 extra:
   recipe-maintainers:
     - ihnorton
