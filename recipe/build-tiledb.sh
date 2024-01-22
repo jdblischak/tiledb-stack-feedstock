@@ -1,4 +1,4 @@
 #!/bin/sh
 set -ex
 
-cp -R ./TileDB/ "$PREFIX"
+cp -R ./TileDB/* "$PREFIX"
