@@ -9,6 +9,9 @@ source:
   - url: https://github.com/TileDB-Inc/TileDB/releases/download/2.19.0/tiledb-linux-x86_64-noavx2-2.19.0-fa30a88a.tar.gz
     folder: TileDB/
     sha256: 215f48927e4b78377f44326eb543613df07efe47e8213d7c9ea036a3208ad0bd
+  - url: https://github.com/TileDB-Inc/TileDB-Py/archive/0.25.0.tar.gz
+    folder: TileDB-Py/
+    sha256: 70c2cac67cd5c4329df466a6127c1b1698cb80f54535fd33e0d0eb5723dc611e
 
 outputs:
   - name: tiledb
@@ -41,6 +44,57 @@ outputs:
         parallel I/O system with high scalability.
       doc_url: http://docs.tiledb.io
       dev_url: https://github.com/TileDB-Inc/TileDB
+  - name: tiledb-py
+    version: 0.25.0
+    script: build-tiledb-py.sh
+    build:
+      number: 0
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+      host:
+        - pip
+        - wheel
+        - setuptools
+        - setuptools_scm
+        - python
+        - cython <3.0
+        - numpy
+        - pybind11 <2.11
+        - {{ pin_subpackage('tiledb', exact=True) }}
+      run:
+        - python
+        - {{ pin_compatible('numpy') }}
+        - packaging
+    test:
+      requires:
+        - hypothesis
+        - pyarrow
+        - pytest
+        - pandas
+        - psutil
+      imports:
+        - tiledb
+      source_files:
+        - TileDB-Py/tiledb/tests/
+      commands:
+        - python -c "import tiledb; tiledb.libtiledb.version()"
+        - python -c "import tiledb; assert tiledb.VFS().supports('s3')"
+        - cd TileDB-Py && pytest -v --ignore-glob='*_examples.py' --ignore-glob='*_dask.py'
+    about:
+      home: http://tiledb.io
+      license: MIT
+      license_family: MIT
+      license_file: LICENSE
+      summary: Python interface to the TileDB sparse and dense multi-dimensional array storage manager
+      description: |
+        TileDB-Py is the python interface to the TileDB array storage manager.
+        TileDB  is an efficient multi-dimensional array management system which introduces
+        a novel on-disk format that can store dense and sparse array data with
+        support for fast reads and updates and reads. It features excellent compression, and an efficient
+        parallel I/O system with high scalability.
+      doc_url: https://api-reference.tiledb.io/python-api.html
+      dev_url: https://github.com/TileDB-Inc/TileDB-Py
 
 about:
   home: http://tiledb.io

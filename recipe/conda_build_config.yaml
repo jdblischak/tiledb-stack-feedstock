@@ -2,3 +2,11 @@ channel_sources:
   - conda-forge
 channel_targets:
   - tiledb for-cloud
+channel_priority:
+  - strict
+numpy:
+  - 1.22
+python:
+  - 3.9.* *_cpython
+python_impl:
+  - cpython
