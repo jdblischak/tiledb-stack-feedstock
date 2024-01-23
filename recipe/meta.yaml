@@ -34,6 +34,7 @@ outputs:
         - test -e $PREFIX/include/tiledb/tiledb.h
         - test -e $PREFIX/include/tiledb/tiledb
         - test -e $PREFIX/lib/libtiledb$SHLIB_EXT
+        - bash test-tiledb-linking.sh
     about:
       home: http://tiledb.io
       license: MIT
