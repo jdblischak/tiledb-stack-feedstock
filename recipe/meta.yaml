@@ -69,6 +69,7 @@ outputs:
         - python
         - {{ pin_compatible('numpy') }}
         - packaging
+        - {{ pin_subpackage('tiledb', exact=True) }}
     test:
       requires:
         - hypothesis
@@ -123,6 +124,7 @@ outputs:
         - r-base
         - r-nanotime
         - r-spdl
+        - {{ pin_subpackage('tiledb', exact=True) }}
     test:
       requires:
         - r-tinytest
