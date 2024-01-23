@@ -39,6 +39,21 @@ support for fast updates and reads. It features excellent compression, and an ef
 parallel I/O system with high scalability.
 
 
+About libtiledbsoma
+-------------------
+
+Home: http://tiledb.com
+
+Package license: MIT
+
+Summary: TileDB-SOMA C++ library
+
+Development: https://github.com/single-cell-data/TileDB-SOMA
+
+Documentation: https://docs.tiledb.com/
+
+SOMA - for "Stack Of Matrices, Annotated" - is a flexible, extensible, and open-source API enabling access to data in a variety of formats. The driving use case of SOMA is for single-cell data in the form of annotated matrices where observations are frequently cells and features are genes, proteins, or genomic regions.
+
 About libtiledbvcf
 ------------------
 
@@ -90,6 +105,36 @@ a novel on-disk format that can store dense and sparse array data with
 support for fast reads and updates and reads. It features excellent compression, and an efficient
 parallel I/O system with high scalability.
 
+
+About r-tiledbsoma
+------------------
+
+Home: http://tiledb.com
+
+Package license: MIT
+
+Summary: TileDB-SOMA R API
+
+Development: https://github.com/single-cell-data/TileDB-SOMA/tree/main/apis/r
+
+Documentation: https://docs.tiledb.com/
+
+R API for efficient storage and retrieval of single-cell data using TileDB
+
+About tiledbsoma-py
+-------------------
+
+Home: http://tiledb.com
+
+Package license: MIT
+
+Summary: TileDB-SOMA Python API
+
+Development: https://github.com/single-cell-data/TileDB-SOMA/tree/main/apis/python
+
+Documentation: https://docs.tiledb.com/
+
+Python API for efficient storage and retrieval of single-cell data using TileDB
 
 About tiledbvcf-py
 ------------------
@@ -160,11 +205,14 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libtiledbsoma-green.svg)](https://anaconda.org/tiledb/libtiledbsoma) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/libtiledbsoma.svg)](https://anaconda.org/tiledb/libtiledbsoma) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/libtiledbsoma.svg)](https://anaconda.org/tiledb/libtiledbsoma) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/libtiledbsoma.svg)](https://anaconda.org/tiledb/libtiledbsoma) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libtiledbvcf-green.svg)](https://anaconda.org/tiledb/libtiledbvcf) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/libtiledbvcf.svg)](https://anaconda.org/tiledb/libtiledbvcf) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/libtiledbvcf.svg)](https://anaconda.org/tiledb/libtiledbvcf) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/libtiledbvcf.svg)](https://anaconda.org/tiledb/libtiledbvcf) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-r--tiledb-green.svg)](https://anaconda.org/tiledb/r-tiledb) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/r-tiledb.svg)](https://anaconda.org/tiledb/r-tiledb) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/r-tiledb.svg)](https://anaconda.org/tiledb/r-tiledb) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/r-tiledb.svg)](https://anaconda.org/tiledb/r-tiledb) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--tiledbsoma-green.svg)](https://anaconda.org/tiledb/r-tiledbsoma) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/r-tiledbsoma.svg)](https://anaconda.org/tiledb/r-tiledbsoma) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/r-tiledbsoma.svg)](https://anaconda.org/tiledb/r-tiledbsoma) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/r-tiledbsoma.svg)](https://anaconda.org/tiledb/r-tiledbsoma) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-tiledb-green.svg)](https://anaconda.org/tiledb/tiledb) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/tiledb.svg)](https://anaconda.org/tiledb/tiledb) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/tiledb.svg)](https://anaconda.org/tiledb/tiledb) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/tiledb.svg)](https://anaconda.org/tiledb/tiledb) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-tiledb--py-green.svg)](https://anaconda.org/tiledb/tiledb-py) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/tiledb-py.svg)](https://anaconda.org/tiledb/tiledb-py) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/tiledb-py.svg)](https://anaconda.org/tiledb/tiledb-py) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/tiledb-py.svg)](https://anaconda.org/tiledb/tiledb-py) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-tiledb--stack-green.svg)](https://anaconda.org/tiledb/tiledb-stack) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/tiledb-stack.svg)](https://anaconda.org/tiledb/tiledb-stack) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/tiledb-stack.svg)](https://anaconda.org/tiledb/tiledb-stack) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/tiledb-stack.svg)](https://anaconda.org/tiledb/tiledb-stack) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-tiledbsoma--py-green.svg)](https://anaconda.org/tiledb/tiledbsoma-py) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/tiledbsoma-py.svg)](https://anaconda.org/tiledb/tiledbsoma-py) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/tiledbsoma-py.svg)](https://anaconda.org/tiledb/tiledbsoma-py) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/tiledbsoma-py.svg)](https://anaconda.org/tiledb/tiledbsoma-py) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-tiledbvcf--py-green.svg)](https://anaconda.org/tiledb/tiledbvcf-py) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/tiledbvcf-py.svg)](https://anaconda.org/tiledb/tiledbvcf-py) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/tiledbvcf-py.svg)](https://anaconda.org/tiledb/tiledbvcf-py) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/tiledbvcf-py.svg)](https://anaconda.org/tiledb/tiledbvcf-py) |
 
 Installing tiledb-stack
@@ -177,41 +225,41 @@ conda config --add channels tiledb/label/for-cloud
 conda config --set channel_priority strict
 ```
 
-Once the `tiledb/label/for-cloud` channel has been enabled, `libtiledbvcf, r-tiledb, tiledb, tiledb-py, tiledb-stack, tiledbvcf-py` can be installed with `conda`:
+Once the `tiledb/label/for-cloud` channel has been enabled, `libtiledbsoma, libtiledbvcf, r-tiledb, r-tiledbsoma, tiledb, tiledb-py, tiledb-stack, tiledbsoma-py, tiledbvcf-py` can be installed with `conda`:
 
 ```
-conda install libtiledbvcf r-tiledb tiledb tiledb-py tiledb-stack tiledbvcf-py
-```
-
-or with `mamba`:
-
-```
-mamba install libtiledbvcf r-tiledb tiledb tiledb-py tiledb-stack tiledbvcf-py
-```
-
-It is possible to list all of the versions of `libtiledbvcf` available on your platform with `conda`:
-
-```
-conda search libtiledbvcf --channel tiledb/label/for-cloud
+conda install libtiledbsoma libtiledbvcf r-tiledb r-tiledbsoma tiledb tiledb-py tiledb-stack tiledbsoma-py tiledbvcf-py
 ```
 
 or with `mamba`:
 
 ```
-mamba search libtiledbvcf --channel tiledb/label/for-cloud
+mamba install libtiledbsoma libtiledbvcf r-tiledb r-tiledbsoma tiledb tiledb-py tiledb-stack tiledbsoma-py tiledbvcf-py
+```
+
+It is possible to list all of the versions of `libtiledbsoma` available on your platform with `conda`:
+
+```
+conda search libtiledbsoma --channel tiledb/label/for-cloud
+```
+
+or with `mamba`:
+
+```
+mamba search libtiledbsoma --channel tiledb/label/for-cloud
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search libtiledbvcf --channel tiledb/label/for-cloud
+mamba repoquery search libtiledbsoma --channel tiledb/label/for-cloud
 
-# List packages depending on `libtiledbvcf`:
-mamba repoquery whoneeds libtiledbvcf --channel tiledb/label/for-cloud
+# List packages depending on `libtiledbsoma`:
+mamba repoquery whoneeds libtiledbsoma --channel tiledb/label/for-cloud
 
-# List dependencies of `libtiledbvcf`:
-mamba repoquery depends libtiledbvcf --channel tiledb/label/for-cloud
+# List dependencies of `libtiledbsoma`:
+mamba repoquery depends libtiledbsoma --channel tiledb/label/for-cloud
 ```
 
 
