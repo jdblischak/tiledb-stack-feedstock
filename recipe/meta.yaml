@@ -1,14 +1,14 @@
 {% set name = "tiledb-stack" %}
-{% set version = "2.19.0" %}
+{% set version = "2.18.3" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  - url: https://github.com/TileDB-Inc/TileDB/releases/download/2.19.0/tiledb-linux-x86_64-noavx2-2.19.0-fa30a88a.tar.gz
+  - url: https://github.com/TileDB-Inc/TileDB/releases/download/2.18.3/tiledb-linux-x86_64-noavx2-2.18.3-8f8b766.tar.gz
     folder: TileDB/
-    sha256: 215f48927e4b78377f44326eb543613df07efe47e8213d7c9ea036a3208ad0bd
+    sha256: 09d5c654c8f0e24c7d6abc50cf631edcbbe22598825be5ee2d6bfa0425e9ea4f
   - git_url: https://github.com/TileDB-Inc/TileDB-Py.git
     git_rev: 0.25.0
     folder: TileDB-Py/
