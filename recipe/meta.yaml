@@ -144,6 +144,20 @@ outputs:
         TileDB is a highly-parallelized, cloud native array storage engine.
       doc_url: https://docs.tiledb.com/developer/
       dev_url: https://github.com/TileDB-Inc/TileDB-R
+  - name: tiledb-stack
+    version: 2.18.3
+    build:
+      number: 0
+    requirements:
+      run:
+        - {{ pin_subpackage('tiledb', exact=True) }}
+        - {{ pin_subpackage('tiledb-py', exact=True) }}
+        - {{ pin_subpackage('r-tiledb', exact=True) }}
+    about:
+      home: https://www.tiledb.com
+      summary: TileDB Cloud stack
+      description: |
+        The conda binaries deployed to TileDB Cloud
 
 about:
   home: http://tiledb.io
