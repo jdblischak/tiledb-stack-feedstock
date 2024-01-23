@@ -55,6 +55,26 @@ Documentation: https://docs.tiledb.com/developer/
 TileDB is a highly-parallelized, cloud native array storage engine.
 
 
+About tiledb-py
+---------------
+
+Home: http://tiledb.io
+
+Package license: MIT
+
+Summary: Python interface to the TileDB sparse and dense multi-dimensional array storage manager
+
+Development: https://github.com/TileDB-Inc/TileDB-Py
+
+Documentation: https://api-reference.tiledb.io/python-api.html
+
+TileDB-Py is the python interface to the TileDB array storage manager.
+TileDB  is an efficient multi-dimensional array management system which introduces
+a novel on-disk format that can store dense and sparse array data with
+support for fast reads and updates and reads. It features excellent compression, and an efficient
+parallel I/O system with high scalability.
+
+
 Current build status
 ====================
 
@@ -94,6 +114,7 @@ Current release info
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-r--tiledb-green.svg)](https://anaconda.org/tiledb/r-tiledb) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/r-tiledb.svg)](https://anaconda.org/tiledb/r-tiledb) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/r-tiledb.svg)](https://anaconda.org/tiledb/r-tiledb) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/r-tiledb.svg)](https://anaconda.org/tiledb/r-tiledb) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-tiledb-green.svg)](https://anaconda.org/tiledb/tiledb) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/tiledb.svg)](https://anaconda.org/tiledb/tiledb) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/tiledb.svg)](https://anaconda.org/tiledb/tiledb) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/tiledb.svg)](https://anaconda.org/tiledb/tiledb) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-tiledb--py-green.svg)](https://anaconda.org/tiledb/tiledb-py) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/tiledb-py.svg)](https://anaconda.org/tiledb/tiledb-py) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/tiledb-py.svg)](https://anaconda.org/tiledb/tiledb-py) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/tiledb-py.svg)](https://anaconda.org/tiledb/tiledb-py) |
 
 Installing tiledb-stack
 =======================
@@ -105,16 +126,16 @@ conda config --add channels tiledb/label/for-cloud
 conda config --set channel_priority strict
 ```
 
-Once the `tiledb/label/for-cloud` channel has been enabled, `r-tiledb, tiledb` can be installed with `conda`:
+Once the `tiledb/label/for-cloud` channel has been enabled, `r-tiledb, tiledb, tiledb-py` can be installed with `conda`:
 
 ```
-conda install r-tiledb tiledb
+conda install r-tiledb tiledb tiledb-py
 ```
 
 or with `mamba`:
 
 ```
-mamba install r-tiledb tiledb
+mamba install r-tiledb tiledb tiledb-py
 ```
 
 It is possible to list all of the versions of `r-tiledb` available on your platform with `conda`:
