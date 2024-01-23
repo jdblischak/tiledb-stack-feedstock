@@ -1,30 +1,47 @@
+# Set versions here ----
 {% set name = "tiledb-stack" %}
-{% set version = "2.18.3" %}
+{% set version = "2.18.3.2024_01_23" %}
+# TileDB
+{% set version_tiledb = "2.18.3" %}
+{% set release_tiledb = "2.18.3" %}
+{% set commit_tiledb = "8f8b766" %}
+# TileDB-Py
+{% set version_tiledb_py = "0.24.0" %}
+{% set git_ref_tiledb_py = "0.24.0" %}
+# TileDB-R
+{% set version_tiledb_r = "0.22.0" %}
+{% set git_ref_tiledb_r = "0.22.0" %}
+# TileDB-VCF
+{% set version_tiledb_vcf = "0.27.1" %}
+{% set git_ref_tiledb_vcf = "0.27.1" %}
+# TileDB-SOMA
+{% set version_tiledb_soma = "1.6.2" %}
+{% set git_ref_tiledb_soma = "1.6.2" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  - url: https://github.com/TileDB-Inc/TileDB/releases/download/2.18.3/tiledb-linux-x86_64-noavx2-2.18.3-8f8b766.tar.gz
+  - url: https://github.com/TileDB-Inc/TileDB/releases/download/{{ release_tiledb }}/tiledb-linux-x86_64-noavx2-{{ release_tiledb }}-{{ commit_tiledb }}.tar.gz
     folder: TileDB/
     sha256: 09d5c654c8f0e24c7d6abc50cf631edcbbe22598825be5ee2d6bfa0425e9ea4f
   - git_url: https://github.com/TileDB-Inc/TileDB-Py.git
-    git_rev: 0.24.0
+    git_rev: {{ git_ref_tiledb_py }}
     folder: TileDB-Py/
   - git_url: https://github.com/TileDB-Inc/TileDB-R.git
-    git_rev: 0.22.0
+    git_rev: {{ git_ref_tiledb_r }}
     folder: TileDB-R/
   - git_url: https://github.com/TileDB-Inc/TileDB-VCF.git
-    git_rev: 0.27.1
+    git_rev: {{ git_ref_tiledb_vcf }}
     folder: TileDB-VCF/
   - git_url: https://github.com/single-cell-data/TileDB-SOMA.git
-    git_rev: 1.6.2
+    git_rev: {{ git_ref_tiledb_soma }}
     folder: TileDB-SOMA/
 
 outputs:
   - name: tiledb
-    version: {{ version }}
+    version: {{ version_tiledb }}
     script: build-tiledb.sh
     build:
       number: 0
@@ -58,7 +75,7 @@ outputs:
       doc_url: http://docs.tiledb.io
       dev_url: https://github.com/TileDB-Inc/TileDB
   - name: tiledb-py
-    version: 0.25.0
+    version: {{ version_tiledb_py }}
     script: build-tiledb-py.sh
     build:
       number: 0
@@ -110,7 +127,7 @@ outputs:
       doc_url: https://api-reference.tiledb.io/python-api.html
       dev_url: https://github.com/TileDB-Inc/TileDB-Py
   - name: r-tiledb
-    version: 0.23.0
+    version: {{ version_tiledb_r }}
     script: build-tiledb-r.sh
     build:
       number: 0
@@ -155,7 +172,7 @@ outputs:
       doc_url: https://docs.tiledb.com/developer/
       dev_url: https://github.com/TileDB-Inc/TileDB-R
   - name: libtiledbvcf
-    version: 0.27.1
+    version: {{ version_tiledb_vcf }}
     script: build-tiledb-vcf.sh
     requirements:
       build:
@@ -182,7 +199,7 @@ outputs:
         - tiledbvcf create --uri /tmp/test-tiledbvcf-conda
         - bash test-tiledb-vcf-cli.sh
   - name: tiledbvcf-py
-    version: 0.27.1
+    version: {{ version_tiledb_vcf }}
     script: build-tiledb-vcf-py.sh
     requirements:
       build:
@@ -212,7 +229,7 @@ outputs:
         - python -c "import tiledbvcf; tiledbvcf.version"
         - python test-tiledb-vcf-api.py
   - name: libtiledbsoma
-    version: 1.6.2
+    version: {{ version_tiledb_soma }}
     script: build-tiledb-soma.sh
     requirements:
       build:
@@ -242,7 +259,7 @@ outputs:
       doc_url: https://docs.tiledb.com/
       dev_url: https://github.com/single-cell-data/TileDB-SOMA
   - name: tiledbsoma-py
-    version: 1.6.2
+    version: {{ version_tiledb_soma }}
     script: build-tiledb-soma-py.sh
     build:
     requirements:
@@ -289,7 +306,7 @@ outputs:
       doc_url: https://docs.tiledb.com/
       dev_url: https://github.com/single-cell-data/TileDB-SOMA/tree/main/apis/python
   - name: r-tiledbsoma
-    version: 1.6.2
+    version: {{ version_tiledb_soma }}
     script: build-tiledb-soma-r.sh
     build:
       rpaths:
@@ -349,7 +366,7 @@ outputs:
       doc_url: https://docs.tiledb.com/
       dev_url: https://github.com/single-cell-data/TileDB-SOMA/tree/main/apis/r
   - name: tiledb-stack
-    version: 2.18.3
+    version: {{ version }}
     build:
       number: 0
     requirements:
