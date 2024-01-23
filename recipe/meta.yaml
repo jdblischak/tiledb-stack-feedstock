@@ -172,7 +172,7 @@ outputs:
         - {{ pin_subpackage('tiledb', exact=True) }}
     test:
       files:
-        - test-cli.sh
+        - test-tiledb-vcf-cli.sh
       commands:
         - tiledbvcf version
         # verify libhts is linked
@@ -207,7 +207,7 @@ outputs:
       - tiledbvcf
     test:
       files:
-        - test-api.py
+        - test-tiledb-vcf-api.py
       commands:
         - python -c "import tiledbvcf; tiledbvcf.version"
         - python test-tiledb-vcf-api.py
