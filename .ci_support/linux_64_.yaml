@@ -1,7 +1,11 @@
+c_compiler:
+- gcc
+c_compiler_version:
+- '12'
 cdt_name:
 - cos6
 channel_sources:
-- conda-forge
+- conda-forge,tiledb
 channel_targets:
 - tiledb for-cloud
 cxx_compiler:
@@ -13,12 +17,17 @@ docker_image:
 numpy:
 - '1.22'
 pin_run_as_build:
+  pyarrow:
+    min_pin: x
+    max_pin: x
   python:
     min_pin: x.x
     max_pin: x.x
   r-base:
     min_pin: x.x
     max_pin: x.x
+pyarrow:
+- 11.*
 python:
 - 3.9.* *_cpython
 r_base:
@@ -28,5 +37,7 @@ target_platform:
 tiledb:
 - '2.19'
 zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
 - - python
   - numpy

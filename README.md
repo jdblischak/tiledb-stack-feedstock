@@ -39,6 +39,22 @@ support for fast updates and reads. It features excellent compression, and an ef
 parallel I/O system with high scalability.
 
 
+About libtiledbvcf
+------------------
+
+Home: https://www.tiledb.com
+
+Package license: MIT
+
+Summary: TileDB Cloud stack
+
+Development: https://github.com/TileDB-Inc/TileDB
+
+Documentation: http://docs.tiledb.io
+
+The conda binaries deployed to TileDB Cloud
+
+
 About r-tiledb
 --------------
 
@@ -73,6 +89,22 @@ TileDB  is an efficient multi-dimensional array management system which introduc
 a novel on-disk format that can store dense and sparse array data with
 support for fast reads and updates and reads. It features excellent compression, and an efficient
 parallel I/O system with high scalability.
+
+
+About tiledbvcf-py
+------------------
+
+Home: https://www.tiledb.com
+
+Package license: MIT
+
+Summary: TileDB Cloud stack
+
+Development: https://github.com/TileDB-Inc/TileDB
+
+Documentation: http://docs.tiledb.io
+
+The conda binaries deployed to TileDB Cloud
 
 
 About tiledb-stack
@@ -128,10 +160,12 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libtiledbvcf-green.svg)](https://anaconda.org/tiledb/libtiledbvcf) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/libtiledbvcf.svg)](https://anaconda.org/tiledb/libtiledbvcf) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/libtiledbvcf.svg)](https://anaconda.org/tiledb/libtiledbvcf) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/libtiledbvcf.svg)](https://anaconda.org/tiledb/libtiledbvcf) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-r--tiledb-green.svg)](https://anaconda.org/tiledb/r-tiledb) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/r-tiledb.svg)](https://anaconda.org/tiledb/r-tiledb) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/r-tiledb.svg)](https://anaconda.org/tiledb/r-tiledb) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/r-tiledb.svg)](https://anaconda.org/tiledb/r-tiledb) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-tiledb-green.svg)](https://anaconda.org/tiledb/tiledb) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/tiledb.svg)](https://anaconda.org/tiledb/tiledb) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/tiledb.svg)](https://anaconda.org/tiledb/tiledb) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/tiledb.svg)](https://anaconda.org/tiledb/tiledb) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-tiledb--py-green.svg)](https://anaconda.org/tiledb/tiledb-py) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/tiledb-py.svg)](https://anaconda.org/tiledb/tiledb-py) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/tiledb-py.svg)](https://anaconda.org/tiledb/tiledb-py) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/tiledb-py.svg)](https://anaconda.org/tiledb/tiledb-py) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-tiledb--stack-green.svg)](https://anaconda.org/tiledb/tiledb-stack) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/tiledb-stack.svg)](https://anaconda.org/tiledb/tiledb-stack) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/tiledb-stack.svg)](https://anaconda.org/tiledb/tiledb-stack) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/tiledb-stack.svg)](https://anaconda.org/tiledb/tiledb-stack) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-tiledbvcf--py-green.svg)](https://anaconda.org/tiledb/tiledbvcf-py) | [![Conda Downloads](https://img.shields.io/conda/dn/tiledb/tiledbvcf-py.svg)](https://anaconda.org/tiledb/tiledbvcf-py) | [![Conda Version](https://img.shields.io/conda/vn/tiledb/tiledbvcf-py.svg)](https://anaconda.org/tiledb/tiledbvcf-py) | [![Conda Platforms](https://img.shields.io/conda/pn/tiledb/tiledbvcf-py.svg)](https://anaconda.org/tiledb/tiledbvcf-py) |
 
 Installing tiledb-stack
 =======================
@@ -143,41 +177,41 @@ conda config --add channels tiledb/label/for-cloud
 conda config --set channel_priority strict
 ```
 
-Once the `tiledb/label/for-cloud` channel has been enabled, `r-tiledb, tiledb, tiledb-py, tiledb-stack` can be installed with `conda`:
+Once the `tiledb/label/for-cloud` channel has been enabled, `libtiledbvcf, r-tiledb, tiledb, tiledb-py, tiledb-stack, tiledbvcf-py` can be installed with `conda`:
 
 ```
-conda install r-tiledb tiledb tiledb-py tiledb-stack
-```
-
-or with `mamba`:
-
-```
-mamba install r-tiledb tiledb tiledb-py tiledb-stack
-```
-
-It is possible to list all of the versions of `r-tiledb` available on your platform with `conda`:
-
-```
-conda search r-tiledb --channel tiledb/label/for-cloud
+conda install libtiledbvcf r-tiledb tiledb tiledb-py tiledb-stack tiledbvcf-py
 ```
 
 or with `mamba`:
 
 ```
-mamba search r-tiledb --channel tiledb/label/for-cloud
+mamba install libtiledbvcf r-tiledb tiledb tiledb-py tiledb-stack tiledbvcf-py
+```
+
+It is possible to list all of the versions of `libtiledbvcf` available on your platform with `conda`:
+
+```
+conda search libtiledbvcf --channel tiledb/label/for-cloud
+```
+
+or with `mamba`:
+
+```
+mamba search libtiledbvcf --channel tiledb/label/for-cloud
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search r-tiledb --channel tiledb/label/for-cloud
+mamba repoquery search libtiledbvcf --channel tiledb/label/for-cloud
 
-# List packages depending on `r-tiledb`:
-mamba repoquery whoneeds r-tiledb --channel tiledb/label/for-cloud
+# List packages depending on `libtiledbvcf`:
+mamba repoquery whoneeds libtiledbvcf --channel tiledb/label/for-cloud
 
-# List dependencies of `r-tiledb`:
-mamba repoquery depends r-tiledb --channel tiledb/label/for-cloud
+# List dependencies of `libtiledbvcf`:
+mamba repoquery depends libtiledbvcf --channel tiledb/label/for-cloud
 ```
 
 

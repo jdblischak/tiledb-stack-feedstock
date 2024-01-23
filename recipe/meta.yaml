@@ -15,6 +15,9 @@ source:
   - git_url: https://github.com/TileDB-Inc/TileDB-R.git
     git_rev: 0.22.0
     folder: TileDB-R/
+  - git_url: https://github.com/TileDB-Inc/TileDB-VCF.git
+    git_rev: 0.27.1
+    folder: TileDB-VCF/
 
 outputs:
   - name: tiledb
@@ -145,6 +148,63 @@ outputs:
         TileDB is a highly-parallelized, cloud native array storage engine.
       doc_url: https://docs.tiledb.com/developer/
       dev_url: https://github.com/TileDB-Inc/TileDB-R
+  - name: libtiledbvcf
+    version: 0.27.1
+    script: build-tiledb-vcf.sh
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - git
+        - cmake
+        - make
+      host:
+        - htslib >=1.15
+        - {{ pin_subpackage('tiledb', exact=True) }}
+      run:
+        - htslib >=1.15
+        - {{ pin_subpackage('tiledb', exact=True) }}
+    test:
+      files:
+        - test-cli.sh
+      commands:
+        - tiledbvcf version
+        # verify libhts is linked
+        - ldd ${PREFIX}/lib/libtiledbvcf.so | grep libhts
+        # verify libdeflate is linked to libhts
+        - ldd ${PREFIX}/lib/libhts.so.* | grep libdeflate
+        - tiledbvcf create --uri /tmp/test-tiledbvcf-conda
+        - bash test-tiledb-vcf-cli.sh
+  - name: tiledbvcf-py
+    version: 0.27.1
+    script: build-tiledb-vcf-py.sh
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+      host:
+        - numpy
+        - {{ pin_subpackage('libtiledbvcf', exact=True) }}
+        - python
+        - pyarrow  {{ pyarrow }}
+        - pybind11 >=2.5
+        - wheel >=0.30
+        - setuptools >=18.0
+        - setuptools_scm 6.0.1
+        - setuptools_scm_git_archive
+      run:
+        - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.24') }}
+        - {{ pin_subpackage('libtiledbvcf', exact=True) }}
+        - python
+        - {{ pin_compatible('pyarrow', max_pin='x') }}
+        - pandas
+    imports:
+      - tiledbvcf
+    test:
+      files:
+        - test-api.py
+      commands:
+        - python -c "import tiledbvcf; tiledbvcf.version"
+        - python test-tiledb-vcf-api.py
   - name: tiledb-stack
     version: 2.18.3
     build:
@@ -154,6 +214,8 @@ outputs:
         - {{ pin_subpackage('tiledb', exact=True) }}
         - {{ pin_subpackage('tiledb-py', exact=True) }}
         - {{ pin_subpackage('r-tiledb', exact=True) }}
+        - {{ pin_subpackage('libtiledbvcf', exact=True) }}
+        - {{ pin_subpackage('tiledbvcf-py', exact=True) }}
     about:
       home: https://www.tiledb.com
       summary: TileDB Cloud stack
