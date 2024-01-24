@@ -22,7 +22,7 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://github.com/TileDB-Inc/TileDB.git
+  - git_url: https://github.com/TileDB-Inc/TileDB.git
     git_rev:  {{ git_rev_tiledb }}
     folder: TileDB/
   - git_url: https://github.com/TileDB-Inc/TileDB-Py.git
