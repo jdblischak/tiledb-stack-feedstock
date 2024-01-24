@@ -1,7 +1,13 @@
 #!/bin/sh
 set -exo pipefail
 
+pwd
+ls -l
+
 cd TileDB/
+
+pwd
+ls -l
 
 CURL_LIBS_APPEND=`$PREFIX/bin/curl-config --libs`
 export LDFLAGS="${LDFLAGS} ${CURL_LIBS_APPEND}"
@@ -9,6 +15,11 @@ export LDFLAGS="${LDFLAGS} -Wl,--no-as-needed -lrt"
 export TILEDB_GCS=ON
 
 mkdir build && cd build
+
+pwd
+ls -l
+ls -l ..
+
 cmake ${CMAKE_ARGS} \
   -DTILEDB_VCPKG=OFF \
   -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
