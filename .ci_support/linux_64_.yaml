@@ -1,3 +1,5 @@
+bzip2:
+- '1'
 c_compiler:
 - gcc
 c_compiler_version:
@@ -16,8 +18,20 @@ docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 fmt:
 - '9'
+google_cloud_cpp:
+- '2.12'
+libabseil:
+- '20230802'
+libcurl:
+- '8'
+libxml2:
+- '2'
+lz4_c:
+- 1.9.3
 numpy:
 - '1.22'
+openssl:
+- '3'
 pin_run_as_build:
   pyarrow:
     min_pin: x
@@ -45,3 +59,7 @@ zip_keys:
   - cxx_compiler_version
 - - python
   - numpy
+zlib:
+- '1.2'
+zstd:
+- '1.5'
