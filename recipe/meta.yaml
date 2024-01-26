@@ -1,6 +1,6 @@
 # Set versions here ----
 {% set name = "tiledb-stack" %}
-{% set version = "2.18.4.2024_01_26" %}
+{% set version = "2.18.4.2024_01_23" %}
 # TileDB
 {% set version_tiledb = "2.18.4" %}
 {% set git_rev_tiledb = "2.18.4" %}
@@ -388,10 +388,7 @@ outputs:
     build:
       number: 0
     requirements:
-      host:
-        - python
       run:
-        - python
         - {{ pin_subpackage('tiledb', exact=True) }}
         - {{ pin_subpackage('tiledb-py', exact=True) }}
         - {{ pin_subpackage('r-tiledb', exact=True) }}
