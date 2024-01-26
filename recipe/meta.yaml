@@ -396,6 +396,7 @@ outputs:
     version: {{ version }}
     build:
       number: 0
+      noarch: python
     requirements:
       run:
         - {{ pin_subpackage('tiledb', exact=True) }}
