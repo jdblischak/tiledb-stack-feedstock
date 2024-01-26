@@ -1,6 +1,6 @@
 # Set versions here ----
 {% set name = "tiledb-stack" %}
-{% set version = "2.18.4.2024_01_23" %}
+{% set version = "2.18.4.2024_01_26" %}
 # TileDB
 {% set version_tiledb = "2.18.4" %}
 {% set git_rev_tiledb = "2.18.4" %}
@@ -73,6 +73,7 @@ outputs:
       requires:
         - {{ compiler('cxx') }}
         - cmake
+        - libarrow
         - make
       commands:
         - test -e $PREFIX/include/tiledb/tiledb.h
@@ -241,6 +242,10 @@ outputs:
     imports:
       - tiledbvcf
     test:
+      requires:
+        - jupyter
+        - pyarrow
+        - tensorflow
       files:
         - test-tiledb-vcf-api.py
       commands:
@@ -310,6 +315,10 @@ outputs:
         - somacore >=1.0.6
         - scanpy 1.9.*
     test:
+      requires:
+        - jupyter
+        - pyarrow
+        - tensorflow
       imports:
         - tiledbsoma
       commands:
