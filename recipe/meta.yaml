@@ -400,6 +400,13 @@ outputs:
         - {{ pin_subpackage('libtiledbsoma', exact=True) }}
         - {{ pin_subpackage('tiledbsoma-py', exact=True) }}
         - {{ pin_subpackage('r-tiledbsoma', exact=True) }}
+    test:
+      requires:
+        - jupyter
+        - pyarrow
+        - tensorflow
+      imports:
+        - tiledb
     about:
       home: https://www.tiledb.com
       summary: TileDB Cloud stack
