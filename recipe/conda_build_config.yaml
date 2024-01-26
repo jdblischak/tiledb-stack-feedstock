@@ -6,9 +6,12 @@ channel_priority:
   - strict
 numpy:
   - 1.22
+  - 1.22
 python:
+  - 3.8.* *_cpython
   - 3.9.* *_cpython
 python_impl:
+  - cpython
   - cpython
 r_base:
   - 4.3
