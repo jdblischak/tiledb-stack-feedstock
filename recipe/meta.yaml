@@ -248,7 +248,7 @@ outputs:
       - tiledbvcf
     test:
       requires:
-        # - jupyter
+        - jupyter
         - pyarrow {{ pyarrow }}
         # - tensorflow
       files:
@@ -321,7 +321,7 @@ outputs:
         - scanpy 1.9.*
     test:
       requires:
-        # - jupyter
+        - jupyter
         - pyarrow {{ pyarrow }}
         # - tensorflow
       imports:
