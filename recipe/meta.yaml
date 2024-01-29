@@ -248,9 +248,9 @@ outputs:
       - tiledbvcf
     test:
       requires:
-        - jupyter
+        # - jupyter
         - pyarrow
-        - tensorflow
+        # - tensorflow
       files:
         - test-tiledb-vcf-api.py
       commands:
@@ -321,9 +321,9 @@ outputs:
         - scanpy 1.9.*
     test:
       requires:
-        - jupyter
+        # - jupyter
         - pyarrow
-        - tensorflow
+        # - tensorflow
       imports:
         - tiledbsoma
       commands:
