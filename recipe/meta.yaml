@@ -250,7 +250,7 @@ outputs:
       requires:
         - jupyter
         - pyarrow {{ pyarrow }}
-        # - tensorflow
+        - tensorflow
       files:
         - test-tiledb-vcf-api.py
       commands:
@@ -323,7 +323,7 @@ outputs:
       requires:
         - jupyter
         - pyarrow {{ pyarrow }}
-        # - tensorflow
+        - tensorflow
       imports:
         - tiledbsoma
       commands:
