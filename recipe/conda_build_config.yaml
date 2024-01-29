@@ -16,15 +16,15 @@ python_impl:
 r_base:
   - 4.3
 libarrow:
-  - 11.0.0
+  - 14
 arrow_cpp:
-  - 11.0.0
+  - 14
 libarrow_all:
-  - 11.0.0
+  - 14
 pyarrow:
-  - 11.0.0
+  - 14
 r_arrow:
-  - 11.0.0
+  - 14
 pin_run_as_build:
   pyarrow:
     min_pin: x
