@@ -1,25 +1,30 @@
 # Set versions here ----
-{% set name = "tiledb-stack" %}
-{% set version = "2.18.4.2024_01_26" %}
+
 # TileDB
 {% set version_tiledb = "2.18.4" %}
 {% set git_rev_tiledb = "2.18.4" %}
+
 # TileDB-Py
 {% set version_tiledb_py = "0.24.0" %}
 {% set git_rev_tiledb_py = "0.24.0" %}
+
 # TileDB-R
 {% set version_tiledb_r = "0.22.0" %}
 {% set git_rev_tiledb_r = "0.22.0" %}
+
 # TileDB-VCF
 {% set version_tiledb_vcf = "0.27.1" %}
 {% set git_rev_tiledb_vcf = "0.27.1" %}
+
 # TileDB-SOMA
 {% set version_tiledb_soma = "1.6.2" %}
 {% set git_rev_tiledb_soma = "1.6.2" %}
 
 package:
-  name: {{ name }}
-  version: {{ version }}
+  # These are just placeholders. Each separate output defines its name and
+  # version
+  name: tiledb-stack
+  version: 0.0.0.0
 
 source:
   - git_url: https://github.com/TileDB-Inc/TileDB.git
@@ -392,33 +397,6 @@ outputs:
       description: R API for efficient storage and retrieval of single-cell data using TileDB
       doc_url: https://docs.tiledb.com/
       dev_url: https://github.com/single-cell-data/TileDB-SOMA/tree/main/apis/r
-  - name: tiledb-stack
-    version: {{ version }}
-    build:
-      number: 0
-      noarch: python
-    requirements:
-      run:
-        - {{ pin_subpackage('tiledb', exact=True) }}
-        - {{ pin_subpackage('tiledb-py', exact=True) }}
-        - {{ pin_subpackage('r-tiledb', exact=True) }}
-        - {{ pin_subpackage('libtiledbvcf', exact=True) }}
-        - {{ pin_subpackage('tiledbvcf-py', exact=True) }}
-        - {{ pin_subpackage('libtiledbsoma', exact=True) }}
-        - {{ pin_subpackage('tiledbsoma-py', exact=True) }}
-        - {{ pin_subpackage('r-tiledbsoma', exact=True) }}
-    test:
-      requires:
-        - jupyter
-        - pyarrow
-        - tensorflow
-      imports:
-        - tiledb
-    about:
-      home: https://www.tiledb.com
-      summary: TileDB Cloud stack
-      description: |
-        The conda binaries deployed to TileDB Cloud
 
 about:
   home: http://tiledb.io
