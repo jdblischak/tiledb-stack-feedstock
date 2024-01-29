@@ -15,8 +15,14 @@ python_impl:
   - cpython
 r_base:
   - 4.3
+libarrow:
+  - 11.0.0
+arrow_cpp:
+  - 11.0.0
+libarrow_all:
+  - 11.0.0
 pyarrow:
-  - 11.*
+  - 11.0.0
 pin_run_as_build:
   pyarrow:
     min_pin: x

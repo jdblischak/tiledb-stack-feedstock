@@ -22,6 +22,8 @@ google_cloud_cpp:
 - '2.12'
 libabseil:
 - '20230802'
+libarrow:
+- 11.0.0
 libcurl:
 - '8'
 libxml2:
@@ -44,7 +46,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 pyarrow:
-- 11.*
+- 11.0.0
 python:
 - 3.8.* *_cpython
 - 3.9.* *_cpython
