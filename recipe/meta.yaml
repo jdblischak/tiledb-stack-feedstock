@@ -398,6 +398,15 @@ outputs:
       doc_url: https://docs.tiledb.com/
       dev_url: https://github.com/single-cell-data/TileDB-SOMA/tree/main/apis/r
 
+test:
+  requires:
+    - pyarrow
+    - tiledbsoma-py
+    - tiledbvcf-py
+  imports:
+    - tiledbsoma
+    - tiledbvcf
+
 about:
   home: http://tiledb.io
   license: MIT
