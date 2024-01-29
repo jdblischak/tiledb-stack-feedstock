@@ -23,6 +23,8 @@ libarrow_all:
   - 11.0.0
 pyarrow:
   - 11.0.0
+r_arrow:
+  - 11.0.0
 pin_run_as_build:
   pyarrow:
     min_pin: x

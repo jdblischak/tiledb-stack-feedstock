@@ -78,7 +78,7 @@ outputs:
       requires:
         - {{ compiler('cxx') }}
         - cmake
-        - libarrow
+        - libarrow {{ libarrow }}
         - make
       commands:
         - test -e $PREFIX/include/tiledb/tiledb.h
@@ -124,7 +124,7 @@ outputs:
     test:
       requires:
         - hypothesis
-        - pyarrow
+        - pyarrow {{ pyarrow }}
         - pytest
         - pandas
         - psutil
@@ -232,7 +232,7 @@ outputs:
         - numpy
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
-        - pyarrow  {{ pyarrow }}
+        - pyarrow {{ pyarrow }}
         - pybind11 >=2.5
         - wheel >=0.30
         - setuptools >=18.0
@@ -249,7 +249,7 @@ outputs:
     test:
       requires:
         # - jupyter
-        - pyarrow
+        - pyarrow {{ pyarrow }}
         # - tensorflow
       files:
         - test-tiledb-vcf-api.py
@@ -322,7 +322,7 @@ outputs:
     test:
       requires:
         # - jupyter
-        - pyarrow
+        - pyarrow {{ pyarrow }}
         # - tensorflow
       imports:
         - tiledbsoma
@@ -356,7 +356,7 @@ outputs:
         - r-bit64
         - r-rcppint64
         - {{ pin_subpackage('r-tiledb', exact=True) }}
-        - r-arrow
+        - r-arrow {{ r_arrow }}
         - r-fs
         - r-glue
         - r-urltools
@@ -372,7 +372,7 @@ outputs:
         - r-matrix
         - r-bit64
         - {{ pin_subpackage('r-tiledb', exact=True) }}
-        - r-arrow
+        - r-arrow {{ r_arrow }}
         - r-fs
         - r-glue
         - r-urltools
