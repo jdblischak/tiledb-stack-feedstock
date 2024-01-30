@@ -323,7 +323,7 @@ outputs:
       requires:
         - jupyter
         - pyarrow {{ pyarrow }}
-        - tensorflow
+        - tensorflow  # [py>=39]
       imports:
         - tiledbsoma
       commands:
