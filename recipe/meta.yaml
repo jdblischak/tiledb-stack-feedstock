@@ -247,13 +247,13 @@ outputs:
     imports:
       - tiledbvcf
     test:
-      requires:
-        - cudatoolkit=11.4  # [py==39]
-        - cudatoolkit-dev=11.4  # [py==39]
-        - jupyter  # [py==39]
-        - pyarrow {{ pyarrow }}  # [py==39]
-        - tensorflow=2.11.*  # [py==39]
-        - tensorflow-datasets  # [py==39]
+      # requires:
+      #   - cudatoolkit=11.4  # [py==39]
+      #   - cudatoolkit-dev=11.4  # [py==39]
+      #   - jupyter  # [py==39]
+      #   - pyarrow {{ pyarrow }}  # [py==39]
+      #   - tensorflow=2.11.*  # [py==39]
+      #   - tensorflow-datasets  # [py==39]
       files:
         - test-tiledb-vcf-api.py
       commands:
@@ -323,13 +323,13 @@ outputs:
         - somacore >=1.0.6
         - scanpy 1.9.*
     test:
-      requires:
-        - cudatoolkit=11.4  # [py==39]
-        - cudatoolkit-dev=11.4  # [py==39]
-        - jupyter  # [py==39]
-        - pyarrow {{ pyarrow }}  # [py==39]
-        - tensorflow=2.11.*  # [py==39]
-        - tensorflow-datasets  # [py==39]
+      # requires:
+      #   - cudatoolkit=11.4  # [py==39]
+      #   - cudatoolkit-dev=11.4  # [py==39]
+      #   - jupyter  # [py==39]
+      #   - pyarrow {{ pyarrow }}  # [py==39]
+      #   - tensorflow=2.11.*  # [py==39]
+      #   - tensorflow-datasets  # [py==39]
       imports:
         - tiledbsoma
       commands:
