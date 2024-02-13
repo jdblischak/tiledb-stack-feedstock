@@ -1,6 +1,8 @@
 set -x
 set -o xtrace
 
+source $RECIPE_DIR/enable-caching.sh
+
 cd TileDB-R/
 
 ## Build a tarball and install from the tarball is the officially blessed way

@@ -1,6 +1,8 @@
 #!/bin/sh
 set -exo pipefail
 
+source $RECIPE_DIR/enable-caching.sh
+
 cd TileDB/
 
 CURL_LIBS_APPEND=`$PREFIX/bin/curl-config --libs`
@@ -27,3 +29,5 @@ cmake ${CMAKE_ARGS} \
   ..
 make -j ${CPU_COUNT}
 make -C tiledb install
+
+ccache -s

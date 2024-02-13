@@ -54,6 +54,7 @@ outputs:
         - {{ pin_subpackage('tiledb', max_pin='x.x') }}
     requirements:
       build:
+        - ccache
         - make
         - cmake
         - pkg-config
@@ -106,6 +107,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - ccache
       host:
         - pip
         - wheel
@@ -163,6 +165,7 @@ outputs:
         - {{ compiler('cxx') }}
         - pkg-config
         - make
+        - ccache
       host:
         - r-base
         - {{ pin_subpackage('tiledb', exact=True) }}
@@ -205,6 +208,7 @@ outputs:
         - git
         - cmake
         - make
+        - ccache
       host:
         - htslib >=1.15
         - {{ pin_subpackage('tiledb', exact=True) }}
@@ -228,6 +232,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - ccache
       host:
         - numpy
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
@@ -269,6 +274,7 @@ outputs:
         - git
         - cmake
         - make
+        - ccache
       host:
         - {{ pin_subpackage('tiledb', exact=True) }}
         - spdlog
@@ -296,6 +302,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - ccache
       host:
         - python
         - pip
@@ -354,6 +361,7 @@ outputs:
       build:
         - {{ compiler('cxx') }}
         - pkg-config
+        - ccache
       host:
         - {{ pin_subpackage('libtiledbsoma', exact=True) }}
         - r-base

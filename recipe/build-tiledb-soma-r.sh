@@ -2,6 +2,8 @@
 
 set -ex
 
+source $RECIPE_DIR/enable-caching.sh
+
 cd TileDB-SOMA/
 
 cd apis/r

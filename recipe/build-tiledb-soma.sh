@@ -2,6 +2,8 @@
 
 set -exo pipefail
 
+source $RECIPE_DIR/enable-caching.sh
+
 cd TileDB-SOMA/
 
 mkdir libtiledbsoma-build && cd libtiledbsoma-build

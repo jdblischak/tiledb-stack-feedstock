@@ -3,6 +3,8 @@
 set -e
 set -x
 
+source $RECIPE_DIR/enable-caching.sh
+
 export TILEDB_CONDA_BUILD=1
 
 cd TileDB-Py/
