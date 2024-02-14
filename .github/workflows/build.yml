@@ -17,3 +17,9 @@ jobs:
           SCCACHE_REGION: ${{ vars.SCCACHE_REGION }}
         run: |
           python3 build-locally.py
+      - name: Archive package artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: packages
+          path: |
+            build_artifacts/*
