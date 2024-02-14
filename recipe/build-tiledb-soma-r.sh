@@ -8,6 +8,8 @@ cd TileDB-SOMA/
 
 cd apis/r
 
+sccache -z
+
 export DISABLE_AUTOBREW=1
 
 # https://github.com/conda-forge/r-tiledb-feedstock/commit/29cb6816636e7b5b58545e1407a8f0c29ff9dc39
@@ -37,3 +39,5 @@ if [[ $target_platform  == osx-arm64 ]]; then
 fi
 
 ${R} CMD INSTALL ${R_ARGS_EXTRA} --build . ${R_ARGS}
+
+sccache -s

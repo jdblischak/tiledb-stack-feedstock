@@ -10,6 +10,8 @@ export LDFLAGS="${LDFLAGS} ${CURL_LIBS_APPEND}"
 export LDFLAGS="${LDFLAGS} -Wl,--no-as-needed -lrt"
 export TILEDB_GCS=ON
 
+sccache -z
+
 mkdir build && cd build
 cmake ${CMAKE_ARGS} \
   -DTILEDB_VCPKG=OFF \
@@ -30,4 +32,4 @@ cmake ${CMAKE_ARGS} \
 make -j ${CPU_COUNT}
 make -C tiledb install
 
-ccache -s
+sccache -s

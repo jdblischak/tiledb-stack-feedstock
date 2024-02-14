@@ -8,8 +8,10 @@ cd TileDB-VCF/
 
 cd apis/python
 
+sccache -z
+
 $PYTHON setup.py install --single-version-externally-managed --record record.txt --libtiledbvcf="${PREFIX}"
 
 $PYTHON setup.py clean --all
 
-ccache -s
+sccache -s

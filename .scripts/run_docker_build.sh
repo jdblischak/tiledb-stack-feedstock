@@ -80,6 +80,8 @@ fi
 
 ( startgroup "Start Docker" ) 2> /dev/null
 
+echo "========= Bucket: $SCCACHE_BUCKET"
+
 export UPLOAD_PACKAGES="${UPLOAD_PACKAGES:-True}"
 export IS_PR_BUILD="${IS_PR_BUILD:-False}"
 docker pull "${DOCKER_IMAGE}"
@@ -101,6 +103,12 @@ docker run ${DOCKER_RUN_ARGS} \
            -e remote_url \
            -e sha \
            -e BINSTAR_TOKEN \
+           -e SCCACHE_BUCKET \
+           -e SCCACHE_REGION \
+           -e SCCACHE_ENDPOINT \
+           -e SCCACHE_S3_USE_SSL \
+           -e AWS_ACCESS_KEY_ID \
+           -e AWS_SECRET_ACCESS_KEY \
            "${DOCKER_IMAGE}" \
            bash \
            "/home/conda/feedstock_root/${PROVIDER_DIR}/build_steps.sh"

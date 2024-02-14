@@ -1,4 +1,4 @@
 #!/bin/sh
 
 args="${@##-Werror*}"
-ccache $NN_CXX_ORIG $args
+sccache $NN_CXX_ORIG $args
