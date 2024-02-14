@@ -1,8 +1,8 @@
 # Set versions here ----
 
 # TileDB
-{% set version_tiledb = "2.19.1" %}
-{% set git_rev_tiledb = "2.19.1" %}
+{% set version_tiledb = "2.19.0" %}
+{% set git_rev_tiledb = "2.19.0" %}
 
 # TileDB-Py
 {% set version_tiledb_py = "0.24.0" %}
