@@ -2,9 +2,13 @@
 
 set -ex
 
+source $RECIPE_DIR/enable-caching.sh
+
 cd TileDB-SOMA/
 
 cd apis/r
+
+sccache -z
 
 export DISABLE_AUTOBREW=1
 
@@ -35,3 +39,5 @@ if [[ $target_platform  == osx-arm64 ]]; then
 fi
 
 ${R} CMD INSTALL ${R_ARGS_EXTRA} --build . ${R_ARGS}
+
+sccache -s

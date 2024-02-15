@@ -2,7 +2,11 @@
 
 set -exo pipefail
 
+source $RECIPE_DIR/enable-caching.sh
+
 cd TileDB-VCF/
+
+sccache -z
 
 mkdir libtiledbvcf-build && cd libtiledbvcf-build
 
@@ -19,3 +23,5 @@ make install-libtiledbvcf
 
 # Cleanup
 cd ../ && rm -r libtiledbvcf-build
+
+sccache -s

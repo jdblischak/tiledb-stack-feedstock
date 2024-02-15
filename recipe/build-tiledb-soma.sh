@@ -2,7 +2,11 @@
 
 set -exo pipefail
 
+source $RECIPE_DIR/enable-caching.sh
+
 cd TileDB-SOMA/
+
+sccache -z
 
 mkdir libtiledbsoma-build && cd libtiledbsoma-build
 
@@ -19,3 +23,5 @@ make -j ${CPU_COUNT}
 make install-libtiledbsoma
 
 cd .. && rm -rf libtiledbsoma-build
+
+sccache -s

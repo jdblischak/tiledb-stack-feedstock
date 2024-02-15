@@ -1,8 +1,8 @@
 # Set versions here ----
 
 # TileDB
-{% set version_tiledb = "2.18.4" %}
-{% set git_rev_tiledb = "2.18.4" %}
+{% set version_tiledb = "2.19.0" %}
+{% set git_rev_tiledb = "2.19.0" %}
 
 # TileDB-Py
 {% set version_tiledb_py = "0.24.0" %}
@@ -49,11 +49,19 @@ outputs:
     script: build-tiledb.sh
     build:
       number: 0
+      script_env:
+        - SCCACHE_BUCKET
+        - SCCACHE_REGION
+          # - SCCACHE_ENDPOINT
+          # - SCCACHE_S3_USE_SSL
+        - AWS_ACCESS_KEY_ID
+        - AWS_SECRET_ACCESS_KEY
       run_exports:
         # https://abi-laboratory.pro/?view=timeline&l=tiledb
         - {{ pin_subpackage('tiledb', max_pin='x.x') }}
     requirements:
       build:
+        - sccache
         - make
         - cmake
         - pkg-config
@@ -106,6 +114,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - sccache
       host:
         - pip
         - wheel
@@ -163,6 +172,7 @@ outputs:
         - {{ compiler('cxx') }}
         - pkg-config
         - make
+        - sccache
       host:
         - r-base
         - {{ pin_subpackage('tiledb', exact=True) }}
@@ -205,6 +215,7 @@ outputs:
         - git
         - cmake
         - make
+        - sccache
       host:
         - htslib >=1.15
         - {{ pin_subpackage('tiledb', exact=True) }}
@@ -228,6 +239,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - sccache
       host:
         - numpy
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
@@ -269,6 +281,7 @@ outputs:
         - git
         - cmake
         - make
+        - sccache
       host:
         - {{ pin_subpackage('tiledb', exact=True) }}
         - spdlog
@@ -296,6 +309,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - sccache
       host:
         - python
         - pip
@@ -354,6 +368,7 @@ outputs:
       build:
         - {{ compiler('cxx') }}
         - pkg-config
+        - sccache
       host:
         - {{ pin_subpackage('libtiledbsoma', exact=True) }}
         - r-base
