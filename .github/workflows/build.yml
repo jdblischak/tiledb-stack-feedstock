@@ -22,4 +22,4 @@ jobs:
         with:
           name: packages
           path: |
-            build_artifacts/*
+            build_artifacts
